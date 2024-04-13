@@ -4,7 +4,6 @@ import { HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, BehaviorSubject, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import { environment } from 'src/environments/environment';
 
 interface Repository {
   id: number;
@@ -83,7 +82,7 @@ export class ApiService {
 
  getLanguages(url: string): Observable<Tag[]> {
   const headers = new HttpHeaders({
-    Authorization: environment.apiKey
+    Authorization: "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"
   });
 
   return this.httpClient.get<Tag[]>(url, { headers }).pipe(
