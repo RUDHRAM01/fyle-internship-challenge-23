@@ -19,7 +19,7 @@ interface Tag {
   providedIn: 'root'
 })
 export class ApiService {
-  private searchSubject = new BehaviorSubject<string>(this.getStoredSearchTerm() || 'sameer0288');
+  private searchSubject = new BehaviorSubject<string>(this.getStoredSearchTerm() || 'rudhram01');
   private total_pages = new BehaviorSubject<number>(0);
   private curr_page = new BehaviorSubject<number>(1);
   private repositories = new BehaviorSubject<Repository[]>([]);
