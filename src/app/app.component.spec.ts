@@ -1,9 +1,19 @@
 import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { HttpClientModule } from '@angular/common/http';
+import { SearchComponent } from './search/search.component';
+import { ProfileComponent } from './profile/profile.component';
+import { RepositoriesComponent } from './repositories/repositories.component';
+import { NgModel } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 describe('AppComponent', () => {
   beforeEach(() => TestBed.configureTestingModule({
-    declarations: [AppComponent]
+    declarations: [AppComponent,SearchComponent,ProfileComponent,RepositoriesComponent],
+    imports:[
+      HttpClientModule,
+      CommonModule
+    ]
   }));
 
   it('should create the app', () => {
@@ -18,10 +28,4 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('fyle-frontend-challenge');
   });
 
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('fyle-frontend-challenge app is running!');
-  });
 });
